@@ -1,1 +1,1 @@
-console.log("newfile script is loaded");
+console.log("I am execusting code of newfile.js of this repo");
