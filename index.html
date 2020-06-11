@@ -16,9 +16,17 @@
 <script type="text/javascript">
 
       window.addEventListener('CookiebotOnAccept', function (e) {
-      if (Cookiebot.consent.marketing)
-          {
-              debugger;
+          if (Cookiebot.consent.marketing) {
+              alert("Marketing is selected");
+          }
+          if (Cookiebot.consent.necessary) {
+              alert("Necessary is selected");
+          }
+          if (Cookiebot.consent.statistics) {
+              alert("Statistics is selected");
+          }
+          if (Cookiebot.consent.preferences) {
+              alert("Preferences is selected");
           }
       }, false);
 
