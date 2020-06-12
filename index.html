@@ -11,6 +11,25 @@
   <h1>
     TESTING COOKIE BANNER
   </h1>
+  <script>
+    function setCookieItem (sKey, sValue, sDays, sPath, sDomain, bSecure) {
+      if (!sKey || /^(?:expires|max\-age|path|domain|secure)$/i.test(sKey)) { return false; }
+      var sExpires = "";
+
+      if (sDays) {
+        var date = new Date();
+        date.setTime(date.getTime() + (sDays*24*60*60*1000));
+        sExpires = "; expires=" + date.toUTCString();
+      }
+
+      document.cookie = encodeURIComponent(sKey) + "=" + encodeURIComponent(sValue) + sExpires + (sDomain ? "; domain=" + sDomain : "") + (sPath ? "; path=" + sPath : "") + (bSecure ? "; secure" : "");
+      return true;
+  }
+
+  setCookieItem("sanu", "123", 23, "/", "https://sgunique.github.io");
+  setCookieItem("facebook", "123", 23, "/", "facebook.com");
+  setCookieItem("linked", "123", 23, "/", "linked.com");
+  </script>
   
   <script>
     function loadScriptFile() {
@@ -19,7 +38,6 @@
    function renewCookieConsent() {
       Cookiebot.renew();
     }
-
   </script>
   <button onclick="loadScriptFile()"> LOAD JS FILE </button>
     <button onclick="renewCookieConsent()"> RENEW COOKIE CONSENT </button>
