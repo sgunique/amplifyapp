@@ -1,0 +1,49 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+    <script>
+    function setCookieItem (sKey, sValue, sDays, sPath, sDomain, bSecure) {
+      if (!sKey || /^(?:expires|max\-age|path|domain|secure)$/i.test(sKey)) { return false; }
+      var sExpires = "";
+
+      if (sDays) {
+        var date = new Date();
+        date.setTime(date.getTime() + (sDays*24*60*60*1000));
+        sExpires = "; expires=" + date.toUTCString();
+      }
+
+      document.cookie = encodeURIComponent(sKey) + "=" + encodeURIComponent(sValue) + sExpires + (sDomain ? "; domain=" + sDomain : "") + (sPath ? "; path=" + sPath : "") + (bSecure ? "; secure" : "");
+      return true;
+  }
+
+  setCookieItem("sanu", "123", 23);
+  setCookieItem("facebook", "123", 23, "/amplifyapp", "facebook.com");
+  setCookieItem("linked", "123", 23, "/amplifyapp", "linked.com");
+  </script>
+  <style>
+    .cookiefirst-root { 
+      display: none; 
+    }
+  </style>
+</head>
+<body>
+  <script src="https://consent.cookiefirst.com/banner.js" data-cookiefirst-key="f4252521-bf59-417c-822a-a4866115ac63"></script>
+  <h1>
+    TESTING COOKIE BANNER
+  </h1>
+  <a target="_blank" href="https://www.cookiebot.com/de/developer/">https://www.cookiebot.com/de/developer/</a>>
+  
+    <script>
+      if (window.CookieFirst) {
+        const consent = CookieFirst.consent;
+       console.log('consent: ', consent);
+
+      }
+    </script>
+</body>
+</html>
