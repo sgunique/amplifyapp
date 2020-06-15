@@ -56,8 +56,11 @@
   <div>This cookie table has been created and updated by the <a href="https://cookiefirst.com">CookieFirst consent management platform</a>.</div> -->
   
     <script>
-      const consent = CookieFirst.consent;
-      console.log('consent: ', consent);
+      if (CookieFirst) {
+        const consent = CookieFirst.consent;
+       console.log('consent: ', consent);
+
+      }
     </script>
 </body>
 </html>
