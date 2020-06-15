@@ -6,13 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-</head>
-<body>
-  <h1>
-    TESTING COOKIE BANNER
-  </h1>
-  <a target="_blank" href="https://www.cookiebot.com/de/developer/">https://www.cookiebot.com/de/developer/</a>>
-  <script>
+    <script>
     function setCookieItem (sKey, sValue, sDays, sPath, sDomain, bSecure) {
       if (!sKey || /^(?:expires|max\-age|path|domain|secure)$/i.test(sKey)) { return false; }
       var sExpires = "";
@@ -31,13 +25,19 @@
   setCookieItem("facebook", "123", 23, "/amplifyapp", "facebook.com");
   setCookieItem("linked", "123", 23, "/amplifyapp", "linked.com");
   </script>
+</head>
+<body>
+  <script src="https://consent.cookiefirst.com/banner.js" data-cookiefirst-key="f4252521-bf59-417c-822a-a4866115ac63"></script>
+  <h1>
+    TESTING COOKIE BANNER
+  </h1>
+  <a target="_blank" href="https://www.cookiebot.com/de/developer/">https://www.cookiebot.com/de/developer/</a>>
+
   
   <script>
     function loadScriptFile() {
-      Cookiebot.getScript("https://sgunique.github.io/amplifyapp/newfile.js");
     }
    function renewCookieConsent() {
-      Cookiebot.renew();
     }
   </script>
   <button onclick="loadScriptFile()"> LOAD JS FILE </button>
@@ -47,6 +47,12 @@
 <script type="text/javascript">
 
 </script>
+  <div id="cookiefirst-policy-page"></div>
+  <div>This cookie policy has been created and updated by <a href="https://cookiefirst.com">CookieFirst.com</a>.</div>
+  
+  <div id="cookiefirst-cookies-table"></div>
+  <div>This cookie table has been created and updated by the <a href="https://cookiefirst.com">CookieFirst consent management platform</a>.</div>
+  
 
 </body>
 </html>
